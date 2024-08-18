@@ -33,4 +33,9 @@ public class ProjectController {
     public Project archiveProject(@PathVariable String id) {
         return projectService.archiveProject(id);
     }
+
+    @GetMapping("/user/{innovatorId}")
+    public List<Project> getProjectsByUser(@PathVariable String innovatorId) {
+        return projectService.getProjectsByUser(innovatorId);
+    }
 }

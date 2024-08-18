@@ -18,9 +18,11 @@ public class ProjectService {
     }
 
     public List<Project> getAllProjects() {
-        return projectRepository.findByStatus("PUBLISHED");
+        return projectRepository.findAll();
     }
-
+    public List<Project> getProjectsByUser(String innovatorId) {
+        return projectRepository.findByInnovatorId(innovatorId);
+    }
     public Project publishProject(String projectId) {
         Project project = projectRepository.findById(projectId)
                 .orElseThrow(() -> new RuntimeException("Project not found"));
