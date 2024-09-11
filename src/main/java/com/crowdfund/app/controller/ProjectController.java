@@ -19,6 +19,11 @@ public class ProjectController {
         return projectService.createProject(project);
     }
 
+    @GetMapping("/{id}/detail")
+    public Project getProject(@PathVariable String id) {
+        return projectService.getProject(id);
+    }
+
     @GetMapping
     public List<Project> getAllProjects() {
         return projectService.getAllProjects();
